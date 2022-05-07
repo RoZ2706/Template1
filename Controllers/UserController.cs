@@ -13,5 +13,10 @@ namespace Template1.Controllers
         {
             return View();
         }
+        public ActionResult Search()
+        {
+            List<int> a = new List<int>();
+            return PartialView();
+        }
     }
 }

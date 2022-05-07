@@ -229,8 +229,6 @@ header .title h4{
     padding: 20px;
     min-height: calc(100% - 200px);
 }
-.content-header {
-}
 .content-header .tool-bar .icon {
     font-size:25px;
     color:#004dd1;
@@ -240,4 +238,18 @@ header .title h4{
 }
 .content-header .tool-bar .icon:hover {
     transform:scale(1.1);
+}
+.side-bar {
+    width:100%;
+    max-width:0px;
+    position:fixed;
+    top:70px;
+    right:0px;
+    height:calc(100% - 140px);
+    background:#fff;
+    box-shadow:#ccc 0px 0px 5px;
+    transition:0.5s;
+}
+.side-bar.active {
+    max-width:250px;
 }

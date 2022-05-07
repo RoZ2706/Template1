@@ -14645,3 +14645,21 @@ $(document).ready(function () {
         }
     })
 })
+function OpenSidebar(url) {
+    $(".side-bar").addClass("active")
+    $(".side-bar").load(url)
+}
+function CloseSidebar() {
+    $(".side-bar").removeClass("active")
+    $(".side-bar").html("")
+}
+$(document).ready(function () {
+    $(document).on("focus", ".r-form-item input", function() {
+        $(this).parent().addClass("focus")
+    })
+    $(document).on("focusout", ".r-form-item input", function() {
+        if ($(this).val().length < 1) {
+            $(this).parent().removeClass("focus")
+        }
+    })
+})

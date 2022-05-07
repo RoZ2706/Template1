@@ -8,7 +8,7 @@
         </div>
         <div class="col-lg-4 tool-bar d-flex justify-content-end">
             <i class="fas fa-plus icon"></i>
-            <i class="fas fa-search icon"></i>
+            <i class="fas fa-search icon" onclick="OpenSidebar('@Url.Action("Search", "User")')"></i>
         </div>
     </div>
 </div>
@@ -38,7 +38,17 @@
     </tbody>
     <tfoot>
         <tr>
-            <td></td>
+            <td colspan="99">
+                <div class="page-nav-wrapper">
+                    <div class="page-nav">
+                        <div class="nav-btn"><i class="fas fa-angle-double-left icon"></i></div>
+                        <div class="nav-btn"><i class="fas fa-angle-left icon"></i></div>
+                        <div class="nav-input"><input value="1" /> / <span>1</span></div>
+                        <div class="nav-btn"><i class="fas fa-angle-right icon"></i></div>
+                        <div class="nav-btn"><i class="fas fa-angle-double-right icon"></i></div>
+                    </div>
+                </div>
+            </td>
         </tr>
     </tfoot>
 </table>
