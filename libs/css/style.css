@@ -2,6 +2,10 @@
     font-family: 'Roboto';
     src: url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Black.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Italic.ttf') format('truetype'), url('../fonts/Roboto/Roboto-ThinItalic.ttf') format('truetype'), url('../fonts/Roboto/Roboto-BlackItalic.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype'), url('../fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Light.ttf') format('truetype'), url('../fonts/Roboto/Roboto-LightItalic.ttf') format('truetype'), url('../fonts/Roboto/Roboto-MediumItalic.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Thin.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Neo Sans';
+    src: url('../fonts/Neo-Sans/UTM Neo Sans Intel.ttf') format('truetype'), url('../fonts/Neo-Sans/UTM Neo Sans Intel_Italic.ttf') format('truetype'), url('../fonts/Neo-Sans/UTM Neo Sans IntelBold.ttf') format('truetype'), url('../fonts/Neo-Sans/UTM Neo Sans IntelBold_Italic.ttf') format('truetype');
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -55,7 +59,7 @@ html, body {
 body {
     background:#ddd;
     display: flex;
-    font-family: Roboto !important;
+    font-family: 'Neo Sans' !important;
     transition:0.5s;
 }
 header, footer {
@@ -63,16 +67,45 @@ header, footer {
     position:fixed;
     left:0px;
     background:#fff;
-    box-shadow:#ccc 0px 0px 5px;
+    box-shadow:#ccc 0px 0px 8px;
     height:70px;
     z-index:10;
+    padding:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 header {
     top: 0px;
 }
-footer {
-    bottom:0px;
+header .title h4{
+    margin:0px;
 }
+    header .header-profile  {
+        width:30%;
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+    }
+        header .header-profile img {
+            height: 60px;
+            width: 60px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow:#ccc 0px 0px 5px;
+        }
+    header .header-profile .icon {
+        font-size:25px;
+        color:#004dd1;
+        cursor:pointer;
+        transition:0.3s;
+    }
+    header .header-profile .icon:hover {
+        transform:scale(1.1);
+    }
+    footer {
+        bottom: 0px;
+    }
 .left-menu {
     width:100%;
     max-width: 80px;
@@ -91,15 +124,19 @@ footer {
     max-width:250px;
 }
     .left-menu .menu-item {
-        display:grid;
-        grid-template-columns: 60px auto;
         cursor:pointer;
         margin:10px 0px;
         padding:8px 0px;
         color:#004dd1;
         border-radius:0.25rem;
         transition:0.3s;
+        overflow:hidden;
     }
+        .left-menu .menu-item .menu-header {
+            display: grid;
+            grid-template-columns: 60px auto;
+            position:relative;
+        }
     .left-menu .menu-item:not(.active):hover {
         background:rgba(0,77,209,0.3);
         color:rgba(0,0,0,0.95);
@@ -123,3 +160,84 @@ footer {
         color:#fff;
         box-shadow:#fff 0px 0px 3px inset;
     }
+    .left-menu .menu-item.has-child {
+        max-height:50px;
+        position:relative;
+    }
+        .left-menu .menu-item.has-child::after {
+            content: "\203A";
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            transform: rotate(180deg);
+            right: 15px;
+            transition: 0.3s;
+            display: none;
+        }
+    .left-menu:hover .menu-item.has-child::after {
+        display:block;
+    }
+    .left-menu .menu-item.has-child:hover::after {
+        transform:rotate(90deg);
+    }
+    .left-menu .menu-item.has-child .menu-child {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+        .left-menu .menu-item.has-child .menu-child a {
+            margin: 5px 0px;
+            margin-left: 30px;
+            color:#004dd1;
+            text-decoration:none;
+            transition:0.3s;
+            padding:5px 0px;
+            border-radius:0.25rem;
+        }
+        .left-menu .menu-item.has-child .menu-child a:not(.active):hover {
+            padding-left:10px;
+        }
+        .left-menu .menu-item.has-child .menu-child a::before {
+            content: "\203A";
+            font-size:20px;
+            margin:0px 10px;
+        }
+    .left-menu .menu-item.has-child:hover {
+        max-height:500px;
+        background:#fff;
+        color:#004dd1;
+        border:1px solid #004dd1;
+    }
+        .left-menu .menu-item.has-child:hover .menu-child a:not(.active):hover {
+            background: rgba(0,77,209,0.3);
+            color: rgba(0,0,0,0.95);
+        }
+    .left-menu .menu-item.has-child.active:hover {
+        background:#fff;
+        color:#004dd1;
+    }
+    .left-menu .menu-item.has-child.active:hover .menu-child a.active {
+        background:#004dd1;
+        color:#fff;
+    }
+.main-content {
+    width: calc(100% - 120px);
+    margin-left: 100px;
+    margin-top: 100px;
+    background: #fff;
+    border-radius: 0.25rem;
+    padding: 20px;
+    min-height: calc(100% - 200px);
+}
+.content-header {
+}
+.content-header .tool-bar .icon {
+    font-size:25px;
+    color:#004dd1;
+    transition:0.3s;
+    cursor:pointer;
+    margin:0px 10px;
+}
+.content-header .tool-bar .icon:hover {
+    transform:scale(1.1);
+}

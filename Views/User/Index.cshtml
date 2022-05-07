@@ -1,0 +1,45 @@
+﻿<div class="content-header">
+    <div class="row">
+        <div class="col-lg-4">
+            <h4>USER TABLE</h4>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-center">
+            <b>TOTAL: 10</b>
+        </div>
+        <div class="col-lg-4 tool-bar d-flex justify-content-end">
+            <i class="fas fa-plus icon"></i>
+            <i class="fas fa-search icon"></i>
+        </div>
+    </div>
+</div>
+<table class="r-table-1">
+    <thead>
+        <tr>
+            <th width="80">INDEX</th>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+            <th>PHONE</th>
+            <th>ADDRESS</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(int i = 0; i < 10;i++)
+            {
+                <tr>
+                    <td class="text-center">@(i+1)</td>
+                    <td>username@(i+1)</td>
+                    <td>email@(i+1)</td>
+                    <td>phone@(i+1)</td>
+                    <td>address@(i+1)</td>
+                    <td></td>
+                </tr>
+            }
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+</table>
+<script>
+    rActive = "user"
+</script>

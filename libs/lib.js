@@ -14387,7 +14387,6 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("." + rActive).addClass('active')
-    $("." + rActive).parent().addClass('active')
 })
 $(document).ready(function () {
     $(".single-daterange").daterangepicker({
