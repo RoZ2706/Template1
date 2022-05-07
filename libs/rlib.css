@@ -16,3 +16,9 @@
 .r-table-1 tbody td {
     padding:5px 20px;
 }
+.r-table-1 tbody tr:nth-child(odd) {
+    background:rgba(0,0,0,0.10);
+}
+    .r-table-1 tfoot {
+        border-top: 1px solid #555;
+    }
