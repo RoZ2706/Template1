@@ -1,0 +1,29 @@
+﻿<div class="content-header">
+    <div class="row">
+        <div class="col-lg-4">
+            <h4>WRITE A NEW MAIL</h4>
+        </div>
+    </div>
+</div>
+<div class="r-form-item">
+    <input />
+    <label>Receiver email</label>
+</div>
+<div class="r-form-item">
+    <input />
+    <label>Title</label>
+</div>
+<textarea id="Content" placeholder="Content"></textarea>
+
+<div class="row mt-3">
+    <div class="col-12 text-end">
+        <button class="rbtn rbtn-success">Send</button>
+        <button class="rbtn rbtn-secondary">Cancel</button>
+    </div>
+</div>
+<script src="~/libs/ckeditor/ckeditor.js"></script>
+<script id="tempScript">
+    CKEDITOR.replace('Content');
+    rActive = "email-new"
+    $("#tempScript").remove()
+</script>

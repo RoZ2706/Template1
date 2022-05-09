@@ -6,8 +6,20 @@
         <div class="col-lg-4 d-flex justify-content-center">
             <b>TOTAL: 10</b>
         </div>
-        <div class="col-lg-4 tool-bar d-flex justify-content-end">
-            <i class="fas fa-plus icon"></i>
+        <div class="col-lg-4 tool-bar d-flex justify-content-end align-items-center">
+            <div class="amount-row-selection">
+                <div class="r-form-item m-0">
+                    <select>
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <label>Row amount</label>
+                </div>
+            </div>
+            <i class="fas fa-plus icon" onclick="RModalShow('@Url.Action("Update", "User")')"></i>
             <i class="fas fa-search icon" onclick="OpenSidebar('@Url.Action("Search", "User")')"></i>
         </div>
     </div>

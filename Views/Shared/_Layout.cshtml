@@ -20,7 +20,7 @@
             <i class="far fa-moon icon"></i>
             <i class="far fa-envelope icon"></i>
             <i class="far fa-bell icon"></i>
-            <i class="fas fa-cogs icon"></i>
+            <i class="fas fa-cog icon"></i>
             <img src="~/libs/assets/myavt.jpg" />
         </div>
     </header>
@@ -31,7 +31,7 @@
                     <i class="fas fa-home"></i>
                 </div>
                 <div class="text">
-                    <p class="limit-1">Trang chủ</p>
+                    <p class="limit-1">Home Page</p>
                 </div>
             </div>
         </div>
@@ -41,7 +41,34 @@
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="text">
-                    <p class="limit-1">Người dùng</p>
+                    <p class="limit-1">Users</p>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item has-child email-received email-sent email-draft email-trash email-new">
+            <div class="menu-header">
+                <div class="icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <div class="text">
+                    <p class="limit-1">Email</p>
+                </div>
+            </div>
+            <div class="menu-child">
+                <a class="limit-1 email-new">New email</a>
+                <a class="limit-1 email-received">Received</a>
+                <a class="limit-1 email-sent">Sent</a>
+                <a class="limit-1 email-draft">Draft</a>
+                <a class="limit-1 email-trash">Trash</a>
+            </div>
+        </div>
+        <div class="menu-item chats">
+            <div class="menu-header">
+                <div class="icon">
+                    <i class="fas fa-comment"></i>
+                </div>
+                <div class="text">
+                    <p class="limit-1">Chats</p>
                 </div>
             </div>
         </div>
@@ -51,12 +78,12 @@
                     <i class="fas fa-cogs"></i>
                 </div>
                 <div class="text">
-                    <p class="limit-1">Cài đặt</p>
+                    <p class="limit-1">Settings</p>
                 </div>
             </div>
             <div class="menu-child">
-                <a>Phân quyền</a>
-                <a>Cài đặt hệ thống</a>
+                <a class="limit-1">Set Permission</a>
+                <a class="limit-1">System Settings</a>
             </div>
         </div>
     </div>
@@ -66,8 +93,9 @@
     <footer>
         <p class="m-0">Copyright &copy; RoZ @DateTime.Now.Year</p>
     </footer>
-    <div class="side-bar">
-
+    <div class="side-bar"></div>
+    <div class="r-modal-wrapper" onclick="RModalHide()">
+        <div class="r-modal"></div>
     </div>
 </body>
 </html>

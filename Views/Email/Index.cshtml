@@ -1,0 +1,68 @@
+﻿<div class="content-header">
+    <div class="row">
+        <div class="col-lg-4">
+            <h4>RECEIVED EMAIL</h4>
+        </div>
+        <div class="col-lg-4 d-flex justify-content-center">
+            <b>TOTAL: 10</b>
+        </div>
+        <div class="col-lg-4 tool-bar d-flex justify-content-end align-items-center">
+            <div class="amount-row-selection">
+                <div class="r-form-item m-0">
+                    <select>
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <label>Row amount</label>
+                </div>
+            </div>
+            <i class="fas fa-plus icon" onclick="RModalShow('@Url.Action("Update", "User")')"></i>
+            <i class="fas fa-search icon" onclick="OpenSidebar('@Url.Action("Search", "User")')"></i>
+        </div>
+    </div>
+</div>
+<table class="r-table-1">
+    <thead>
+        <tr>
+            <th width="180">DATE</th>
+            <th width="150" >SENDER</th>
+            <th>CONTENT</th>
+            <th width="30">SELECT</th>
+            <th width="80">ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < 30; i++)
+        {
+            <tr>
+                <td class="text-center">@(DateTime.Now.ToString("HH:mm dd/MM/yyyy"))</td>
+                <td><p class="limit-1 m-0">Sender@(i+1)</p></td>
+                <td><p class="limit-1 m-0"><b>Title@(i+1) is long enough to display as an example for email view</b> And this content is long enough for being an example of email view And this content is long enough for being an example of email view</p></td>
+                <td class="text-center"><input type="checkbox" /></td>
+                <td class="text-center"><button class="rbtn rbtn-danger"><i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="99">
+                <div class="page-nav-wrapper">
+                    <div class="page-nav">
+                        <div class="nav-btn"><i class="fas fa-angle-double-left icon"></i></div>
+                        <div class="nav-btn"><i class="fas fa-angle-left icon"></i></div>
+                        <div class="nav-input"><input value="1" /> / <span>1</span></div>
+                        <div class="nav-btn"><i class="fas fa-angle-right icon"></i></div>
+                        <div class="nav-btn"><i class="fas fa-angle-double-right icon"></i></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<script>
+    rActive = "email-received"
+</script>
+

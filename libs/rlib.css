@@ -2,13 +2,13 @@
     width:100%;
     margin-top:20px;
 }
-.r-table-1 thead{
-    border-bottom:1px solid #555;
-    border-radius:0.5rem;
-    padding:5px;
-    margin-bottom:10px;
-    overflow:hidden;
-}
+    .r-table-1 thead {
+        border-bottom: 1px solid #555;
+        padding: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        box-shadow: #ccc 0px 9px 5px;
+    }
 .r-table-1 thead th {
     text-align:center;
     padding:5px;
@@ -19,8 +19,12 @@
 .r-table-1 tbody tr:nth-child(odd) {
     background:rgba(0,0,0,0.10);
 }
+    .r-table-1 tbody tr:hover, .r-table-1 tbody tr:nth-child(odd):hover {
+        background: rgba(0,0,0,0.2);
+    }
     .r-table-1 tfoot {
         border-top: 1px solid #555;
+        box-shadow: #ccc 0px -9px 5px;
     }
 .page-nav-wrapper {
     width:100%;
@@ -68,13 +72,18 @@
     width:30px;
     text-align:center;
 }
+.amount-row-selection {
+    width:150px;
+}
+
+
 .side-bar-header {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-    padding:15px;
-    border-bottom:1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
 }
 .side-bar-header .close-icon {
     position:absolute;
@@ -90,39 +99,47 @@
 
 .r-form-item {
     position:relative;
-    margin-top:15px;
+    margin-top:25px;
 }
-.r-form-item input {
+.r-form-item input, .r-form-item select {
     width:100%;
     border:1px solid #ccc;
     border-radius:0.25rem;
     padding:5px 8px;
     transition:0.3s;
 }
-.r-form-item input:focus {
-    border-color:#004dd1;
-    outline:none;
-    box-shadow:#004dd1 0px 0px 3px;
-}
-.r-form-item label {
+    .r-form-item input:focus, .r-form-item select:focus {
+        border-color: #004dd1;
+        outline: none;
+        box-shadow: #004dd1 0px 0px 3px;
+    }
+.r-form-item input ~ label {
     position:absolute;
     top:3px;
     left:8px;
     transition:0.3s;
 }
-    .r-form-item.focus label {
+    .r-form-item.focus input ~ label {
         top: -17px;
         background: #fff;
-        padding:0px 2px;
-        font-size:15px;
+        padding: 0px 2px;
+        font-size: 15px;
+    }
+    .r-form-item select ~ label {
+        position: absolute;
+        top: -17px;
+        left: 8px;
+        background: #fff;
+        padding: 0px 2px;
+        font-size: 15px;
     }
 
-.rbtn {
-    background:none;
-    border-radius:0.25rem;
-    padding:4px 8px;
-    transition:0.3s;
-}
+    .rbtn {
+        background: none;
+        border-radius: 0.25rem;
+        padding: 4px 8px;
+        transition: 0.3s;
+    }
 .rbtn-success {
     border: 1px solid #14b417;
     color: #14b417;
@@ -165,3 +182,55 @@
         background: #e71010;
         color: #fff;
     }
+
+.r-modal-wrapper {
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:20;
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+    .r-modal-wrapper.active {
+        display: flex;
+        max-height: 1000px;
+    }
+.r-modal {
+    width:100%;
+    max-width:500px;
+    background:#fff;
+    border-radius:0.5rem;
+}
+.r-modal-header {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+    border-bottom:1px solid #ccc;
+    position:relative;
+}
+.r-modal-header .close-icon {
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-size:25px;
+    color:#ccc;
+    transition:0.3s;
+    cursor:pointer;
+}
+.r-modal-header .close-icon:hover {
+    color:#004dd1;
+    transform:scale(1.2);
+}
+.r-modal-footer {
+    padding:10px;
+    text-align:right;
+    border-top:1px solid #ccc;
+}
+.r-modal-body {
+    padding:10px;
+}
