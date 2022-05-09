@@ -521,6 +521,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -579,6 +580,7 @@
     <Content Include="Views\User\Update.cshtml" />
     <Content Include="Views\Email\Index.cshtml" />
     <Content Include="Views\Email\Update.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
