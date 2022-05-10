@@ -14533,10 +14533,11 @@ $(document).ready(function () {
     })
 })
 function reqTextValid(obj) {
+    console.log("TextValid")
     $(obj).parent().find(".invalid-response").remove()
     if ($(obj).val().length < 1) {
         $(obj).parent().addClass("invalid")
-        $(obj).parent().append("<span class='invalid-response'>Không được để trống!</span>")
+        $(obj).parent().append("<span class='invalid-response'>Field must not empty!</span>")
     }
     else {
         $(obj).parent().removeClass("invalid")
@@ -14546,7 +14547,7 @@ function reqChoiceValid(obj) {
     $(obj).parent().find(".invalid-response").remove()
     if ($(obj).find(":selected").val().length < 1) {
         $(obj).parent().addClass("invalid")
-        $(obj).parent().append("<span class='invalid-response'>Hãy chọn 1!</span>")
+        $(obj).parent().append("<span class='invalid-response'>Select one choice!</span>")
     }
     else {
         $(obj).parent().removeClass("invalid")
@@ -14556,11 +14557,11 @@ function reqNumValid(obj) {
     $(obj).parent().find(".invalid-response").remove()
     if ($(obj).val().length < 1) {
         $(obj).parent().addClass("invalid")
-        $(obj).parent().append("<span class='invalid-response'>Không được để trống!</span>")
+        $(obj).parent().append("<span class='invalid-response'>Field must not empty!</span>")
     }
     else if (isNaN($(obj).val())) {
         $(obj).parent().addClass("invalid")
-        $(obj).parent().append("<span class='invalid-response'>Dữ liệu phải là số!</span>")
+        $(obj).parent().append("<span class='invalid-response'>Input data must be numeric!</span>")
     }
     else {
         $(obj).parent().removeClass("invalid")
@@ -14569,6 +14570,7 @@ function reqNumValid(obj) {
 
 $(document).ready(function(){ 
     $(document).on("change", ".r-form-item input[req=text]", function () {
+        console.log("OnChange")
         reqTextValid(this)
     })
     $(document).on("change", ".r-form-item select[req=choice]", function () {
@@ -14652,10 +14654,10 @@ function CloseSidebar() {
     $(".side-bar").html("")
 }
 $(document).ready(function () {
-    $(document).on("focus", ".r-form-item input, .r-form-item select", function() {
+    $(document).on("focus", ".r-form-item input, .r-form-item select, .r-form-item textarea", function() {
         $(this).parent().addClass("focus")
     })
-    $(document).on("focusout", ".r-form-item input, .r-form-item select", function() {
+    $(document).on("focusout", ".r-form-item input, .r-form-item select, .r-form-item textarea", function() {
         if ($(this).val().length < 1) {
             $(this).parent().removeClass("focus")
         }

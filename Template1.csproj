@@ -104,6 +104,7 @@
     <Content Include="libs\assets\background-3.jpg" />
     <Content Include="libs\assets\bell-icon.jpg" />
     <Content Include="libs\assets\envelope-icon.jpg" />
+    <Content Include="libs\assets\light-trails-buildings.jpg" />
     <Content Include="libs\assets\logo39hz-main.png" />
     <Content Include="libs\assets\myavt.jpg" />
     <Content Include="libs\assets\room1.jpg" />
@@ -581,6 +582,7 @@
     <Content Include="Views\Email\Index.cshtml" />
     <Content Include="Views\Email\Update.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -101,25 +101,25 @@
     position:relative;
     margin-top:25px;
 }
-.r-form-item input, .r-form-item select {
+.r-form-item input, .r-form-item select, .r-form-item textarea {
     width:100%;
     border:1px solid #ccc;
     border-radius:0.25rem;
     padding:5px 8px;
     transition:0.3s;
 }
-    .r-form-item input:focus, .r-form-item select:focus {
+    .r-form-item input:focus, .r-form-item select:focus, .r-form-item textarea:focus {
         border-color: #004dd1;
         outline: none;
         box-shadow: #004dd1 0px 0px 3px;
     }
-.r-form-item input ~ label {
-    position:absolute;
-    top:3px;
-    left:8px;
-    transition:0.3s;
-}
-    .r-form-item.focus input ~ label {
+    .r-form-item input ~ label, .r-form-item textarea ~ label {
+        position: absolute;
+        top: 3px;
+        left: 8px;
+        transition: 0.3s;
+    }
+    .r-form-item.focus input ~ label, .r-form-item.focus textarea ~ label {
         top: -17px;
         background: #fff;
         padding: 0px 2px;
@@ -133,6 +133,11 @@
         padding: 0px 2px;
         font-size: 15px;
     }
+.r-form-item .invalid-response {
+    color:red;
+    font-family: Roboto!important;
+    font-size:12px;
+}
 
     .rbtn {
         background: none;
