@@ -14639,7 +14639,7 @@ $(document).ready(function () {
         if (file) {
             var reader = new FileReader()
             reader.onload = function () {
-                $(obj).parent().find("#imagePreview").attr("src", reader.result);
+                $(obj).parent().find("#imagePreview").css("background-image", "url(" + reader.result +")");
             }
             reader.readAsDataURL(file);
         }
@@ -14660,6 +14660,27 @@ $(document).ready(function () {
     $(document).on("focusout", ".r-form-item input, .r-form-item select, .r-form-item textarea", function() {
         if ($(this).val().length < 1) {
             $(this).parent().removeClass("focus")
+        }
+    })
+})
+
+$(document).ready(function () {
+    $("#toggleChatSelection").on("click", function () {
+        var obj = $(this).parent().parent().parent()
+        if (obj.attr("class").includes("toggle-1")) {
+            obj.removeClass("toggle-1")
+        }
+        else {
+            obj.addClass("toggle-1")
+        }
+    })
+    $("#toggleChatMenu").on("click", function () {
+        var obj = $(this).parent().parent().parent()
+        if (obj.attr("class").includes("toggle-2")) {
+            obj.removeClass("toggle-2")
+        }
+        else {
+            obj.addClass("toggle-2")
         }
     })
 })

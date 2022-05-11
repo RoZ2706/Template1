@@ -26,20 +26,37 @@
     </div>
     <div class="chat-box-wrapper">
         <div class="chat-box-header">
-            <div class="toggle-chat-selection"><i class="fas fa-bars icon"></i></div>
+            <div class="toggle-chat-selection" id="toggleChatSelection"><i class="fas fa-bars icon"></i></div>
             <div class="chat-title">
                 <div class="avatar" style="background-image: url('../../libs/assets/myavt.jpg');"></div>
                 <strong class="limit-1 m-0">Name of group chat and it long enough for the example</strong>
                 <p class="limit-1 m-0">Promotion title for this group chat. Hope it's some kind of nice word instead of f*ck and p*ss*</p>
             </div>
-            <div class="toggle-chat-menu"><i class="fas fa-ellipsis-v icon"></i></div>
+            <div class="toggle-chat-menu" id="toggleChatMenu"><i class="fas fa-ellipsis-v icon"></i></div>
         </div>
         <div class="chat-box">
-
+            @for (int i = 0; i < 10; i++)
+            {
+                <div class="chat-item right">
+                    <div class="avatar" style="background-image: url('../../libs/assets/myavt.jpg');"></div>
+                    <div class="content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <strong class="limit-1">@DateTime.Now.ToString("HH:mm dd/MM/yyyy") - Sender</strong>
+                    </div>
+                </div>
+                <div class="chat-item left">
+                    <div class="avatar" style="background-image: url('../../libs/assets/myavt.jpg');"></div>
+                    <div class="content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                        <strong class="limit-1"> @DateTime.Now.ToString("HH:mm dd/MM/yyyy") - Sender</strong>
+                    </div>
+                </div>
+            }
         </div>
         <div class="chat-box-footer">
             <i class="fas fa-image icon"></i>
             <i class="fas fa-paperclip icon"></i>
+            <i class="far fa-grin icon"></i>
             <div class="chat-input">
                 <input />
                 <i class="fas fa-paper-plane icon"></i>
@@ -47,6 +64,52 @@
         </div>
     </div>
     <div class="chat-menu">
-
+        <div class="chat-avatar-wrapper picture-selector" onclick="javascript: document.getElementById('image').click()">
+            <div id="imagePreview" style="background-image: url('../../libs/assets/myavt.jpg');">
+                <div class="layout">
+                    <i class="fas fa-edit icon"></i>
+                </div>
+            </div>
+            <input type="file" id="image" />
+        </div>
+        <div class="chat-menu-group-name">
+            <input value="ChatGroup" autocomplete="off" placeholder="Chat group name" />
+        </div>
+        <div class="chat-menu-item">
+            <div class="icon">
+                <i class="fas fa-thumbtack"></i>
+            </div>
+            <div class="text">Pinned message</div>
+        </div>
+        <div class="chat-menu-item">
+            <div class="icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="text">Group members</div>
+        </div>
+        <div class="chat-menu-item">
+            <div class="icon">
+                <i class="fas fa-file"></i>
+            </div>
+            <div class="text">File, image, link,..</div>
+        </div>
+        <div class="chat-menu-item">
+            <div class="icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="text">Customize group</div>
+        </div>
+        <div class="chat-menu-item">
+            <div class="icon">
+                <i class="fas fa-cog"></i>
+            </div>
+            <div class="text">Personal settings</div>
+        </div>
+        <div class="chat-menu-item">
+            <div class="icon">
+                <i class="fas fa-sign-out-alt text-danger"></i>
+            </div>
+            <div class="text text-danger">Leave group</div>
+        </div>
     </div>
 </div>
