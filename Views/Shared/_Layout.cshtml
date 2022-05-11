@@ -55,14 +55,14 @@
                 </div>
             </div>
             <div class="menu-child">
-                <a class="limit-1 email-new">New email</a>
-                <a class="limit-1 email-received">Received</a>
+                <a class="limit-1 email-new" href="@Url.Action("Update", "Email")">New email</a>
+                <a class="limit-1 email-received" href="@Url.Action("Index", "Email")">Received</a>
                 <a class="limit-1 email-sent">Sent</a>
                 <a class="limit-1 email-draft">Draft</a>
                 <a class="limit-1 email-trash">Trash</a>
             </div>
         </div>
-        <div class="menu-item chats">
+        <div class="menu-item chats" onclick="javascript: window.location.href = '@Url.Action("Index", "Chat")'">
             <div class="menu-header">
                 <div class="icon">
                     <i class="fas fa-comment"></i>

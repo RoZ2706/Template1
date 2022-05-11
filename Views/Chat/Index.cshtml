@@ -1,3 +1,52 @@
-﻿<div class="chat-box">
-    
+﻿<div class="chat-section">
+    <div class="chat-group-selection">
+        <div class="chat-selection-header">
+            <h5>CHAT</h5>
+            <div class="tool-box">
+                <div class="tool-item" title="Đánh dấu tất cả đã đọc"><i class="fas fa-check icon"></i></div>
+                <div class="tool-item" title="Thêm mới nhóm chat"><i class="fas fa-pen icon"></i></div>
+            </div>
+        </div>
+        <div class="chat-selection-search">
+            <div class="chat-search">
+                <input placeholder="Keyword" />
+                <i class="fas fa-search icon"></i>
+            </div>
+        </div>
+        <div class="chat-selection-body">
+            @for (int i = 0; i < 15; i++)
+            {
+                <div class="chat-selection-item">
+                    <div class="avatar" style="background-image: url('../../libs/assets/myavt.jpg');"></div>
+                    <strong class="limit-1 m-0">Name of group chat and it long enough for the example</strong>
+                    <p class="limit-1 m-0">Sender: <i>This is the last message and it long enough for the example</i></p>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="chat-box-wrapper">
+        <div class="chat-box-header">
+            <div class="toggle-chat-selection"><i class="fas fa-bars icon"></i></div>
+            <div class="chat-title">
+                <div class="avatar" style="background-image: url('../../libs/assets/myavt.jpg');"></div>
+                <strong class="limit-1 m-0">Name of group chat and it long enough for the example</strong>
+                <p class="limit-1 m-0">Promotion title for this group chat. Hope it's some kind of nice word instead of f*ck and p*ss*</p>
+            </div>
+            <div class="toggle-chat-menu"><i class="fas fa-ellipsis-v icon"></i></div>
+        </div>
+        <div class="chat-box">
+
+        </div>
+        <div class="chat-box-footer">
+            <i class="fas fa-image icon"></i>
+            <i class="fas fa-paperclip icon"></i>
+            <div class="chat-input">
+                <input />
+                <i class="fas fa-paper-plane icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="chat-menu">
+
+    </div>
 </div>
